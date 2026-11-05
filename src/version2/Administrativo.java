@@ -10,29 +10,39 @@ package version2;
 /**
  * 
  */
-public class Administrativo {
-	private String depentencia;
+public class Administrativo extends Persona
+{
+	private String dependencia;
 	private String cargo;
 	private String salario;
+	
 	/**
-	 * @param depentencia
+	 * @param documentoIdentidad
+	 * @param nombreCompleto
+	 * @param edad
+	 * @param correoInstitucional
+	 * @param dependencia
 	 * @param cargo
 	 * @param salario
 	 */
-	public Administrativo(String depentencia, String cargo, String salario) {
-		super();
-		this.depentencia = depentencia;
+	public Administrativo(String documentoIdentidad, String nombreCompleto, int edad, String correoInstitucional,
+			String dependencia, String cargo, String salario) {
+		super(documentoIdentidad, nombreCompleto, edad, correoInstitucional);
+		this.dependencia = dependencia;
 		this.cargo = cargo;
 		this.salario = salario;
 	}
+	
 	/**
-	 * Método para mostrar la información contenida en: dependencia, cargo, salario
+	 * Método para mostrar la información contenida en: la superclase Persona, dependencia, cargo, salario
 	 */
 	@Override
 	public String toString() {
-		return "Administrativo [depentencia=" + depentencia + ", cargo=" + cargo + ", salario=" + salario + "]";
+	    return "\n Administrativo" + super.toString() + 
+	    		"\n  dependencia=" + this.dependencia + 
+	    		"\n  cargo=" + this.cargo + 
+	    		"\n  salario=" + this.salario;
 	}
-	
 	
 
 }

@@ -1,5 +1,5 @@
 /**
- * Clase Estudiante para crear objetos
+ * Clase Persona para crear objetos
  * @author codigo 200810 Astrid Nayibe Infante Palacio
  * @author codigo 200808 Wilkinshon Exneider Guisao Cañaveral
  * @ sinse 2026-11-02
@@ -12,10 +12,10 @@ package version2;
  */
 class Persona {
 // Atributo de instancia
-	private String documentoIdentidad;
-	private String nombreCompleto;
-	private int edad;
-	private String correoInstitucional;
+	protected String documentoIdentidad;
+	protected String nombreCompleto;
+	protected int edad;
+	protected String correoInstitucional;
 	/**
 	 * @param documentoIdentidad
 	 * @param nombreCompleto

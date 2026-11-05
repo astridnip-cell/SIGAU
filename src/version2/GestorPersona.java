@@ -1,23 +1,22 @@
 /**
-* Clase Administrativo para crear objetos
+* Clase Gestorpersona para crear objetos
  * @author codigo 200810 Astrid Nayibe Infante Palacio
  * @author codigo 200808 Wilkinshon Exneider Guisao Cañaveral
  * @ sinse 2026-11-02
  */
 package version2;
 
+import java.util.Scanner;          // ← LÍNEA NUEVA
+
 /**
  * 
  */
 public class GestorPersona {
 	 private static final int CAPACIDAD = 20;
-
-	    private Persona[] personas = new Persona[CAPACIDAD];
-	    private int cantidad = 0;
-	    private Scanner scanner = new Scanner(System.in);
+	 ...
 
 	    public static void main(String[] args) {
-	        GestorPersonas gestor = new GestorPersonas();
+	        GestorPersona gestor = new GestorPersona();   // ← antes decía GestorPersonas
 	        gestor.ejecutarMenu();
 	        gestor.scanner.close();
 	    }
@@ -96,8 +95,9 @@ public class GestorPersona {
 	            return false;
 	        }
 
-	        Persona nueva;
-	        if (tipo == 1) {
+	        Docente nueva;
+	        String documentoIdentidad;
+			if (tipo == 1) {
 	            System.out.print("Código estudiantil: ");
 	            String codigo = scanner.nextLine().trim();
 	            System.out.print("Programa académico: ");
@@ -112,7 +112,11 @@ public class GestorPersona {
 	                System.out.println("Error: el promedio debe estar entre 0.0 y 5.0.");
 	                return false;
 	            }
-	            nueva = new Estudiante(documento, nombre, edad, correo, codigo, programa, promedio);
+	            String nombreCompleto;
+				String codigoEstudiantil;
+				String programaAcademico;
+				double promedioAcumulado;
+				nueva = new Estudiante(codigoEstudiantil, nombreCompleto, programaAcademico, promedioAcumulado);
 	        } else if (tipo == 2) {
 	            System.out.print("Facultad: ");
 	            String facultad = scanner.nextLine().trim();
@@ -128,7 +132,7 @@ public class GestorPersona {
 	                System.out.println("Error: el salario debe ser mayor que 0.");
 	                return false;
 	            }
-	            nueva = new Docente(documento, nombre, edad, correo, facultad, profesion, salario);
+	            nueva = new Docente (facultad, profesion, salario);
 	        } else {
 	            System.out.print("Dependencia: ");
 	            String dependencia = scanner.nextLine().trim();

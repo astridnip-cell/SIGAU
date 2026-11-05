@@ -7,67 +7,42 @@
 
 package version2;
 
-public class Estudiante 
+public class Estudiante extends Persona 
 {
-	private String codigo;
-    private String nombre;
-    private int edad;
-    private String programa;
-    private double promedio;
+	private String codigoEstidiantil;
+    private String programaAcademico;
+    private double promedioAcumulado;
 	
-    public Estudiante() {
-    }
+    /**
+	 * @param documentoIdentidad
+	 * @param nombreCompleto
+	 * @param edad
+	 * @param correoInstitucional
+	 * @param codigoEstidiantil
+	 * @param programaAcademico
+	 * @param promedioAcumulado
+	 */
+	public Estudiante(String documentoIdentidad, String nombreCompleto, int edad, String correoInstitucional,
+			String codigoEstidiantil, String programaAcademico, double promedioAcumulado) {
+		super(documentoIdentidad, nombreCompleto, edad, correoInstitucional);
+		this.codigoEstidiantil = codigoEstidiantil;
+		this.programaAcademico = programaAcademico;
+		this.promedioAcumulado = promedioAcumulado;
+	}
 
+
+
+	/**
+	 * Método para mostrar la información contenida en: superclase persona, código estudiantil, nombre completo, programa académico y promedio acumulado
+	 */
+	@Override
+	public String toString() {
+		return 	"\n Estudiante = " + super.toString() +
+				"\n Código Estidiantil= " + this.codigoEstidiantil + 
+				"\n Programa Académico=" + this.programaAcademico + 
+				"\n Promedio Acumulado=" + this.promedioAcumulado + "]";
+	}
+	
     
-    public Estudiante(String codigo, String nombre, int edad, String programa, double promedio) 
-    {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.edad = edad;
-        this.programa = programa;
-        this.promedio = promedio;
-    }
-    
-    public String getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public int getEdad() {
-		return edad;
-	}
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
-	public String getPrograma() {
-		return programa;
-	}
-	public void setPrograma(String programa) {
-		this.programa = programa;
-	}
-	public double getPromedio() {
-		return promedio;
-	}
-	public void setPromedio(double promedio) {
-		this.promedio = promedio;
-	}
-    /* Método para mostar la información contenida en los atributos: código, nombre, edad, programa, promedio en el objeto
-     * 
-     */
-	 public void mostrarInformacion() 
-	 {
-	        System.out.println("Código: " + this.codigo
-	        					+"\nNombre: " + this.nombre
-	        					+"\nEdad: " + this.edad
-	        					+"\nPrograma: " + this.programa
-	        					+"\nPromedio: " + this.promedio);
-	 }       
 	       
 }
